@@ -21,7 +21,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: web-game
-        image: mylabacr13.azurecr.io/web-game:tag
+        image: myaksdemo.azurecr.io/app:tag
         ports:
         - containerPort: 80
         resources:
@@ -33,11 +33,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-game
+  name: app
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: web-game
+    app: app
 
